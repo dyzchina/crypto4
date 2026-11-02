@@ -1,0 +1,30 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\signature{Hongjun Gou\\Industrial and Commercial Bank of China\\Beijing 100140, China\\\texttt{gouhongjun\_bs@cq.icbc.com.cn}}
+\address{Hongjun Gou\\Industrial and Commercial Bank of China\\Beijing 100140, China}
+\begin{document}
+\begin{letter}{The Editors\\Nature}
+\opening{Dear Editors,}
+
+I am submitting for consideration the manuscript ``Correlation rigidity and contagion in stablecoin baskets.''
+
+The paper is about a measurement problem that arises whenever a system moves between discrete regimes and is observed mostly inside them. Stablecoin baskets are an unusually clean instance. Every institution that prices the joint behaviour of such a basket - margin desks, index providers, proof-of-reserves auditors - needs its correlation matrix, and none of them can observe it: on a representative day only a handful of coins in a panel of dozens deviate from par at all, so the matrix is filled in by smoothing across the gaps. The smoothing is defended as interpolation under sparse data.
+
+The manuscript shows that the defence rests on a false premise. The gaps are not regions of thin sampling; they are boundaries between structural regimes, defined by the mechanisms through which a peg can fail - collateral backing, price feeds, redemption access, custodianship, bridges, regulation, funding basis and interest margins. Within a regime the joint co-movement structure does not vary, and across a boundary it steps. A smooth estimator is then not merely imprecise at the boundary: it is systematically wrong there, and it is wrong in a way that no amount of additional within-regime data can repair.
+
+Three consequences are developed. The jump across a boundary is carried by the coins the failing channel touches, so it has a block structure rather than a diffuse one. Passing from the co-movement covariance to the correlation matrix - which is what practitioners actually use - destroys the rank-one form of the jump but preserves its sign and its support, and a signed three-tier footprint survives. And because the normalisation assigns the unit diagonal rather than computing it, the induced correlation jump has identically zero diagonal, which is a property no additive law stated directly on a correlation matrix can have.
+
+The empirical section tests the footprint on the nine documented de-peg episodes of 2020--2025 using only public price data. On the largest custodial failure in the record the predicted ordering appears across pair layers, the block-versus-rest contrast is 0.69, and a permutation over which coins could have formed the block places the true block at the 98.9th percentile. The pair most exposed to a trivial explanation - two decentralised coins that contain neither the token that failed nor any coin with direct exposure to the failed custodian - shows the largest jump of any pair in the panel, which rules out an account in which the effect is carried by the failing coin itself.
+
+I have tried to be explicit about what the paper does not establish. Three properties are stated as assumptions rather than derived, so that a reader can separate what is proved from what is claimed; the empirical record resolves the test on one episode, gives a consistent but imprecise sign on a second and nothing on a third; and the block-versus-rest contrast removes a market-wide component only under an identifying condition that the paper states explicitly and tests the reader against. The instrument is a monitor of a channel's incidence, not a forecast of its onset.
+
+Beyond stablecoin markets, the result is a caution about a modelling habit that is common well outside finance: fitting a smooth surface to a system whose structure is piecewise, and reading the resulting residuals as noise. The test proposed here is cheap, requires no proprietary data, and can be applied wherever the regime structure can be identified independently of the outcome.
+
+The manuscript is not under consideration elsewhere and has not been published. The author declares no competing interests. Data and code sufficient to reproduce every number in the paper are archived at https://github.com/dyzchina/crypto4.
+
+\closing{Sincerely,}
+\end{letter}
+\end{document}

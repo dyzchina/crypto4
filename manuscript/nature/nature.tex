@@ -1,0 +1,110 @@
+%% nature.tex — Nature-format submission of the stablecoin basket paper.
+%% Format target (Nature, Article): title <=75 chars, summary <=200 words,
+%% ~2,500-2,800 words of main text with 4 display items, separate Methods.
+%% Numbered references. Build: xelatex/bibtex/xelatex x3 with BIBINPUTS="../;./".
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage[super,comma,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{setspace}
+\usepackage{lineno}
+\linenumbers
+\onehalfspacing
+
+\newcommand{\Mconf}{\mathcal{M}}
+\newcommand{\Mpeg}{\mathcal{M}_{\mathrm{peg}}}
+\newcommand{\Bpeg}{\mathcal{B}}
+\newcommand{\Wpeg}{\mathcal{W}}
+\newcommand{\Sigmait}{\Sigma}
+\newcommand{\Covit}{C}
+\newcommand{\Deltait}{\Delta}
+\newcommand{\Omit}{\Omega}
+
+\title{\Large Correlation rigidity and contagion in\\[1pt]\Large stablecoin baskets}
+\author{Hongjun Gou\thanks{Industrial and Commercial Bank of China, Beijing 100140, China. Email: \texttt{gouhongjun\_bs@cq.icbc.com.cn}.}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{%
+Stablecoin baskets now sit underneath a growing share of crypto settlement, and the margins, audits and index products built on them all depend on one quantity: how the coins in a basket move together when one of them breaks its peg. That quantity is never observed directly. On a typical day only a handful of coins deviate from par at all, so the correlation matrices that institutions publish are smoothed across the gaps where data are thin. Here we show that the gaps are not thin data but structural boundaries. Co-movement is constant within each regime defined by a failure channel---collateral backing, price feeds, redemption access, custodianship, bridges, regulation, funding basis and interest margins---and jumps across the boundary between regimes. The jump is supported on the coins that the failing channel touches, it is signed, and no locally smooth estimator can reproduce it. We give a test for the resulting pattern that uses only public price data and apply it to the documented de-peg episodes of the past six years. On the largest custodial failure in the record the pattern appears as predicted, including on a pair of coins that excludes the coin that failed.%
+}
+
+\input{body.tex}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.62\textwidth]{../figs/fig1_wall_chamber}
+\caption{\textbf{Regime boundaries in the peg-preserving parameter plane.} The two channels that admit a continuous representation, collateral backing and price-feed deviation, carve the peg-preserving parameter space into four smooth chambers. The remaining six channels---redemption gating, custodianship, bridges, regulation, funding basis and interest margins---are discrete triggers and are annotated as events rather than drawn as curves. Co-movement is constant inside a chamber and steps across its boundary.}
+\label{fig:wall}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.9\textwidth]{../figs/fig2_gradient}
+\caption{\textbf{The block signature and its permutation null.} \textbf{a}, Change in peg-deviation correlation $\Delta\rho$ from the pre-event window to the acute window, by pair layer, for the three episodes carrying a multi-coin block. Pair counts in parentheses. The predicted ordering holds on the primary episode and on the second; on the third the block layer sits below both others. \textbf{b}, Coin-level permutation null for the primary episode: block labels are redrawn over sets of three coins and the block-versus-rest contrast recomputed for each of 20{,}000 draws. The observed contrast sits in the upper tail.}
+\label{fig:gradient}
+\end{figure}
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Nine documented de-peg episodes, 2020--2025.} Wall types as in Methods; assignment follows the primary structural failure in the regulator and post-mortem literature. Only three episodes deliver a block of more than one coin, and the pair-level test is defined on exactly those three.}
+\label{tab:events}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Episode & Date & Channel(s) crossed & Block \\
+\midrule
+DAI Black Thursday        & 12--13 Mar 2020 & backing collapse                          & single \\
+UST/LUNA collapse         & 09--12 May 2022 & backing $+$ gate                          & single \\
+USDT stress episode       & 12--13 Jul 2022 & queue-depth spike                         & single \\
+FTX contagion             & 08--14 Nov 2022 & CEX solvency                              & \textbf{multi} \\
+BUSD wind-down            & 13 Feb 2023     & regulatory                                & single \\
+USDC--SVB weekend         & 10--13 Mar 2023 & custody $+$ backing $+$ gate              & \textbf{multi} \\
+FDUSD 2024 event          & 08 Nov 2024     & gate $+$ oracle                           & \textbf{multi} \\
+USDe funding-stress       & 02 May 2024     & basis compression                         & single \\
+GHO structural sub-peg    & 18 Dec 2024     & interest-rate / PSM                       & single \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Pair-level gradient on the three episodes with a multi-coin block.} Entries are layer means of $\Delta\rho$ with pair counts in parentheses; $\widehat{\mathrm{DiD}}$ is the block-versus-rest contrast. $p_{\mathrm{coin}}$ is the coin-level permutation (the operative test), $p_{\mathrm{pair}}$ the pair-level permutation reported for comparison; both one-sided against the no-block null.}
+\label{tab:gradient}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+& BLOCK & CROSS & OUTSIDE & $\widehat{\mathrm{DiD}}$ & $p_{\mathrm{coin}}$ & $p_{\mathrm{pair}}$ \\
+\midrule
+USDC--SVB & $0.9970$ (3) & $0.4219$ (45) & $0.2619$ (105) & $0.6871$ & $0.0109$ & $0.0025$ \\
+FTX       & $0.4937$ (1) & $-0.1404$ (32) & $0.0130$ (120) & $0.5130$ & $0.1553$ & $0.1581$ \\
+FDUSD     & $-0.0762$ (1) & $0.0838$ (44) & $0.1867$ (231) & $-0.2464$ & $0.7671$ & $0.7593$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\input{methods.tex}
+
+\bibliographystyle{naturemag}
+\bibliography{../refs}
+
+\section*{Acknowledgements}
+The author thanks colleagues at the Industrial and Commercial Bank of China for comments on an earlier draft, and acknowledges the maintainers of the public data archives used here.
+
+\section*{Author contributions}
+H.G. designed the study, performed the analysis and wrote the manuscript.
+
+\section*{Competing interests}
+The author declares no competing interests.
+
+\end{document}

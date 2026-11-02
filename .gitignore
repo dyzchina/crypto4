@@ -13,3 +13,10 @@ logs/
 
 # LaTeX build directory
 manuscript/_build/
+
+# LaTeX by-products in subfolders
+manuscript/nature/*.aux
+manuscript/nature/*.bbl
+manuscript/nature/*.blg
+manuscript/nature/*.log
+manuscript/nature/*.out
