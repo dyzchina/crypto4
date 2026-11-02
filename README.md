@@ -1,11 +1,24 @@
-# v10.0 — Pardon Stablecoin VFC (REFRAMED) Reproducibility Bundle
+# v11.2 — Correlation Rigidity and Contagion in Stablecoin Baskets
 
 **Title:** Correlation Rigidity and Contagion in Stablecoin Baskets: A Structural Diagnostic for Supervisors
 
 **Author:** Hongjun Gou (ICBC Beijing 100140)
-**Target journal:** open — general finance / financial-stability journal (see SUBMISSION_CHECKLIST)
-**Version:** v1.1-gradient
-**Status:** v11.0 GRADIENT variant, built 20261030. Theory moved from the correlation matrix to the co-movement covariance (the v10.0 rank-one correlation law was, as the JBF handling editor correctly identified, false on any block of two or more coins); the empirical section rebuilt around a pair-level gradient test. **Note: JBF cannot be re-submitted** — its rejection letter states revised resubmissions are detected and carry penalties. All audits PASS; see CHANGELOG for the full change list.
+**Target journal:** Nature (see SUBMISSION_CHECKLIST)
+**Version:** v1.1.2-assumptions
+**Status:** v11.2 ASSUMPTIONS variant, built 20261102. After a full mathematical-correctness
+audit, the theoretical layer was **removed**: the virtual fundamental class, implicit atlas,
+Calabi–Yau hypothesis, Kontsevich–Soibelman derivation and risk-neutral pricing theorem are
+gone, because they did not hold up (see CHANGELOG for the ten verified findings). Three
+explicit assumptions replace them — within-chamber rigidity (H1), rank-one wall crossing (H2),
+block support (H3) — and everything downstream of them is proved. The co-movement covariance is
+now a centred covariance under a probability measure, so it is positive semidefinite by
+construction and is the same object Section 5 estimates. The empirical section is unchanged in
+substance. 34 pp, 8,170 body words, 129-word abstract, 0 undefined references, all audits pass.
+
+**Note:** JBF cannot be re-submitted — its rejection letter states that revised resubmissions
+are detected and carry penalties. The same applies to Mathematical Finance, SIAM J. Financial
+Mathematics and the Journal of Financial Stability, each of which desk-rejected an earlier
+version of this work.
 
 ## What v6.0 changes vs v5.0
 
