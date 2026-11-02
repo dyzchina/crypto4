@@ -1,0 +1,6 @@
+ticker,n_obs,min_date,max_date,path
+BTC-USD,2191,2020-01-01 00:00:00,2025-12-30 00:00:00,raw\yfinance\BTC_USD.csv
+ETH-USD,2191,2020-01-01 00:00:00,2025-12-30 00:00:00,raw\yfinance\ETH_USD.csv
+^VIX,1507,2020-01-02 00:00:00,2025-12-30 00:00:00,raw\yfinance\idx_VIX.csv
+^TNX,1507,2020-01-02 00:00:00,2025-12-30 00:00:00,raw\yfinance\idx_TNX.csv
+GLD,1507,2020-01-02 00:00:00,2025-12-30 00:00:00,raw\yfinance\GLD.csv

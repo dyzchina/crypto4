@@ -1,0 +1,40 @@
+
+\section{The Peg-Preserving Configuration Space}\label{sec:moduli}
+The staircase of the introduction needs an object underneath it. This section defines the state of a stablecoin (\S\ref{sec:tuple}), the space of joint configurations and the locus on which the peg holds (\S\ref{sec:mpeg}), and states plainly which properties of that space the paper assumes and which it derives (\S\ref{sec:what-is-assumed}). The space is not decorative: it is what makes ``which failure channel is stressed'' a coordinate rather than a narrative device, and it is the object the eight stress walls of \S\ref{sec:wall} stratify.
+
+\subsection{Stablecoin state and peg preservation}\label{sec:tuple}
+\begin{definition}[Stablecoin state]\label{def:stable}
+At a point in time, a stablecoin is a tuple $s_i = (C_i, O_i, R_i)$ where
+\begin{itemize}
+\item $C_i \in \Delta^{K-1}$ is the collateral composition, a point of the $(K-1)$-simplex over $K$ underlying reserve asset classes (fiat deposits, Treasury bills, corporate paper, crypto-collateral, algorithmic-endogenous);
+\item $O_i \in [0.5, 1.5]^J$ is the oracle price vector, a set of $J$ price feeds each reporting the coin's market price in USD, with an oracle-consensus rule $\bar{O}_i = \phi_i(O_i)$;
+\item $R_i \in \{\texttt{open}, \texttt{gated}, \texttt{halted}\}$ is the redemption gate state, a discrete label carrying no continuous degree of freedom.
+\end{itemize}
+Two quantities are derived from the state rather than carried by it. The \emph{signed peg deviation} is $\delta_i := \bar{O}_i - 1$. The \emph{backing ratio} is $\rho_i := \mathrm{value}(C_i)/\mathrm{supply}_i$, which is fixed by the issuer's outstanding supply and is therefore not a free coordinate of $s_i$. Counting continuous degrees of freedom, $s_i$ contributes $(K-1)$ collateral plus $J$ oracle coordinates, i.e.\ $K + J - 1$.
+
+A state is \emph{peg-preserving} at tolerance $\varepsilon$ if $|\delta_i| \le \varepsilon$ and the redemption arbitrage cycle (mint at par $\to$ sell at market $\to$ redeem at par) is executable with round-trip profitability bounded by the same $\varepsilon$. The default threshold $\varepsilon = 50$ basis points is standard \citep{LyonsViswanath2023}. The threshold enters only in the definition of peg preservation, not in the covariance, the crossing law or the test: the empirical section compares acute to pre-event windows and never uses $\varepsilon$ as a cut-off, so no robustness sweep over it is required.
+\end{definition}
+
+\begin{remark}[Why peg preservation is stated pointwise]\label{rem:pointwise}
+An earlier formulation required $|\bar{O}_i(t) - 1| \le \varepsilon$ for all $t \in [0,T]$. That is a condition on a \emph{trajectory}, and $s_i$ carries no time coordinate, so it could not be evaluated on the objects the configuration space consists of. The definition above is pointwise, and the horizon enters only where it belongs, in the empirical windows of \S\ref{sec:panel}.
+\end{remark}
+
+\subsection{The configuration space and the peg-preserving locus}\label{sec:mpeg}
+\begin{definition}[Configuration space and its peg-preserving locus]\label{def:mconf}
+Fix $N$ stablecoins. The \emph{configuration space} is
+\[
+\Mconf = \{(s_1,\ldots,s_N) \mid \text{joint feasibility holds}\},
+\]
+where joint feasibility comprises (i) backing balance, (ii) oracle consistency, and (iii) redemption clearing. The \emph{peg-preserving locus} $\Mpeg \subset \Mconf$ is the subset on which every $s_i$ is peg-preserving in the sense of Definition~\ref{def:stable}.
+\end{definition}
+
+\begin{assumption}[Non-emptiness]\label{ass:nonempty}
+$\Mconf$ and $\Mpeg$ are non-empty on the parameter range considered.
+\end{assumption}
+
+The distinction between $\Mconf$ and $\Mpeg$ matters for what follows. Peg preservation is a \emph{constraint} cutting a locus out of the ambient configuration space, not a restriction on what the ambient space may contain. De-pegging configurations remain points of $\Mconf$; they are simply not points of $\Mpeg$. The chambers and walls of \S\ref{sec:rigidity}--\S\ref{sec:wall} stratify the ambient space.
+
+\subsection{What is assumed and what is derived}\label{sec:what-is-assumed}
+Three properties do the work in this paper, and all three are stated as explicit assumptions rather than as theorems: within-chamber rigidity (Assumption~\ref{ass:rigidity}), the rank-one form of the jump across a wall (Assumption~\ref{ass:wallcrossing}), and the support of that jump on the wall-affected block (Assumption~\ref{ass:support}). Everything downstream of them is proved: the zero diagonal of the induced correlation jump (Corollary~\ref{cor:wall-jump}), its three-tier footprint (Remark~\ref{rem:small-cases}), and the gap between the true correlation and any smooth surface (Corollary~\ref{cor:copula-fail}). What the empirical section then does is a separate question, taken up in \S\ref{sec:empirical}, of whether the consequences describe the data.
+
+Stating them as assumptions is a choice about where the paper's weight should sit, and the choice deserves an argument. Each of the three is a statement about the joint distribution of peg deviations that can be inspected on public price data, and none requires a parametric family, a distributional assumption, or issuer-internal data. They are not, however, equally exposed to the test below. Assumptions~\ref{ass:wallcrossing} and~\ref{ass:support} are jointly tested by the block-versus-rest contrast of \S\ref{sec:empirical}, which is what that section measures. Assumption~\ref{ass:rigidity} is not separately tested there: it concerns how co-movement behaves as parameters vary \emph{within} a regime, whereas the event design observes regimes only through the windows on either side of a crossing. The design can therefore speak to the crossing and to its support, not to the flatness. The rank-one form is not an arbitrary choice: \S\ref{sec:wall} records its lineage in the Kontsevich--Soibelman wall-crossing formula \citep{KontsevichSoibelman2008}, which takes a product over the charges whose central charges change sign across a wall and, where it applies, yields exactly a signed sum of rank-one terms on the coins those charges carry. Taking that form as the primitive lets a reader who doubts the lineage evaluate the claim on the data rather than on the analogy, which is the arrangement the empirical section is built to support. What the reader is asked to accept is Assumptions~\ref{ass:rigidity}--\ref{ass:support}, and the empirical section is the accounting of whether they are a good description.

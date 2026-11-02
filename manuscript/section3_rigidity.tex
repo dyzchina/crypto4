@@ -1,0 +1,74 @@
+
+\section{Correlation Rigidity}\label{sec:rigidity}
+This section supplies the lower half of the staircase: within a failure regime the joint co-movement structure does not move, and no estimator can do better than flat on it. It defines the co-movement covariance as a second moment and the correlation matrix as its normalised image (\S\ref{sec:vfc-int}), characterizes the peg-preserving parameter space and its chamber decomposition (\S\ref{sec:chambers}), states the rigidity assumption (\S\ref{sec:rigidity-thm}), and derives from it the rigidity of the correlation matrix itself.
+
+\subsection{Co-movement covariance and its normalised image}\label{sec:vfc-int}
+Write $\delta = (\delta_1,\ldots,\delta_N)$ for the vector of signed peg deviations of Definition~\ref{def:stable}.
+
+\begin{definition}[Co-movement covariance matrix]\label{def:intensity}
+Fix a chamber of the peg-preserving parameter space (\S\ref{sec:chambers}) and let $\mu_\theta$ be the probability law of $\delta$ while the system sits in that chamber at parameter $\theta$. The law is a primitive of the framework rather than the output of a specified stochastic process: no dynamics is written down, and the only properties used below are that $\mu_\theta$ is a probability measure with finite second moments. \S\ref{sec:empirical} estimates it by the empirical distribution of daily peg deviations over an estimation window, which is the sense in which the object below and the object measured there are the same. The \emph{co-movement covariance matrix} is
+\[
+\Covit_{ij}(\theta) := \operatorname{Cov}_{\mu_\theta}(\delta_i,\delta_j)
+= \mathbb{E}_{\mu_\theta}\bigl[(\delta_i - \bar\delta_i)(\delta_j - \bar\delta_j)\bigr], \qquad \bar\delta_i := \mathbb{E}_{\mu_\theta}[\delta_i],
+\]
+and $\Covit(\theta) := \mathbb{E}_{\mu_\theta}[(\delta - \bar\delta)(\delta - \bar\delta)^\top]$. The centring matters and is not cosmetic: it is what makes $\Covit$ the matrix that the correlation estimates of \S\ref{sec:empirical} actually estimate. A stablecoin that trades persistently below par, such as GHO in \S\ref{sec:walltypes}, has $\bar\delta_i \ne 0$, and an uncentred second moment would not be recovered by any correlation estimate computed on its price series. We therefore take the covariance in the usual centred sense throughout.
+\end{definition}
+
+Because $\Covit(\theta)$ is an expectation of the positive semidefinite rank-one matrix $(\delta-\bar\delta)(\delta-\bar\delta)^\top$, it is symmetric and positive semidefinite by construction, and $\Covit_{ii}(\theta)$ is the variance of coin $i$'s peg deviation. No property of the measure beyond its existence as a probability is used.
+
+\begin{definition}[Correlation as the normalised image]\label{def:corr}
+On the open set where $\Covit_{ii}(\theta) > 0$ for every $i$, the \emph{co-movement correlation matrix} is
+\begin{equation}\label{eq:normalised-corr}
+\Sigmait_{ij}(\theta) := \frac{\Covit_{ij}(\theta)}{\sqrt{\Covit_{ii}(\theta)\,\Covit_{jj}(\theta)}},\qquad \Sigmait_{ii}(\theta) := 1,
+\end{equation}
+equivalently $\Sigmait = D^{-1/2}\Covit D^{-1/2}$ with $D := \operatorname{diag}(\Covit)$. The hypothesis $\Covit_{ii}>0$ is what makes the two forms agree and $D^{-1/2}$ real; it is also what Corollary~\ref{cor:rigidity-corr} below uses.
+\end{definition}
+
+\begin{remark}[Why the covariance, and not the correlation, carries the crossing law]\label{rem:why-cov}
+The wall-crossing operation of \S\ref{sec:wall} is additive and rank-one. That operation is admissible on $\Covit$ but \emph{not} on a correlation matrix: two correlation matrices both have unit diagonal, so their difference must have zero diagonal, whereas a rank-one update $a\,v v^\top$ supported on a block of two or more coins contributes $a v_i^2 > 0$ to the diagonal of the $i$-th coordinate. Stating the crossing law on $\Covit$ and passing to correlations by \eqref{eq:normalised-corr} removes the obstruction exactly, because the normalising map \emph{assigns} the diagonal instead of computing it and therefore absorbs the diagonal increment identically. What it does \emph{not} do is preserve rank-one structure: the normalising map is a nonlinear congruence, so a rank-one additive law on $\Covit$ does not push forward to a rank-one law on $\Sigmait$. Corollary~\ref{cor:copula-fail} states what does survive.
+\end{remark}
+
+\begin{remark}[What a probability measure buys]\label{rem:cov-two-consequences}
+Taking $\mu_\theta$ to be a probability measure is a substantive choice, and it is the one that makes the rest of the paper coherent. It delivers positive semidefiniteness and the Cauchy--Schwarz bound $|\Sigmait_{ij}|\le 1$, so that $\Sigmait$ is genuinely a correlation matrix rather than an array that merely resembles one. It makes the second moments $\Covit_{ij}$ estimable from any window in which peg deviations vary, including calm windows in which no coin crosses the de-peg threshold, which is what makes the pre-event windows of \S\ref{sec:empirical} usable at all. And it is exactly the object \S\ref{sec:empirical} computes, by taking $\mu_\theta$ to be the empirical distribution of daily peg deviations over the estimation window: theory and measurement are the same moment, not two objects related by analogy.
+\end{remark}
+
+\subsection{Peg-preserving parameter space and chambers}\label{sec:chambers}
+\begin{definition}[Wall set and chamber]\label{def:chamber}
+Let $\Theta_{\mathrm{peg}}$ denote the parameter range over which Assumption~\ref{ass:nonempty} holds. Its coordinates are the structural parameters---issuance rule, collateral haircut, oracle bandwidth---together with the state functionals $\rho_i(\theta)$ and $\delta_i(\theta)$ through which those parameters act, so that a condition such as $\rho_i=1$ is read as the level set $\{\theta : \rho_i(\theta)=1\}$ and defines a wall in $\Theta_{\mathrm{peg}}$ rather than a single configuration. Let $\Wpeg := \bigcup_{k=1}^{8} W_k \subset \Theta_{\mathrm{peg}}$ be the union of the eight stress boundaries enumerated in \S\ref{sec:walltypes}: backing-ratio, oracle-deviation, redemption-gate, custody, bridge, regulatory, funding-rate, and interest-rate/PSM. A \emph{chamber} is a connected component of $\Theta_{\mathrm{peg}} \setminus \Wpeg$.
+\end{definition}
+
+Four of the eight walls are defined by an equality between a continuous parameter and a threshold---$W_1$ (backing ratio), $W_2$ (oracle deviation), $W_7$ (funding basis) and $W_8$ (interest spread)---and are codimension-one hypersurfaces in $\Theta_{\mathrm{peg}}$. The other four are discrete transitions between strata rather than passages through a hypersurface: the redemption-gate flip $W_3$, and the custody, bridge and regulatory events $W_4$--$W_6$. All eight are kept in a single list because the failure channel is the same object of supervision and because the crossing each induces in $\Covit$ has the same rank-one form (Assumption~\ref{ass:wallcrossing}); but the reader should not picture all eight as smooth hypersurfaces, and only the first group can be drawn as boundaries in a continuous parameter plane.
+
+\subsection{The rigidity assumption and its consequence}\label{sec:rigidity-thm}
+\begin{assumption}[Within-chamber rigidity, H1]\label{ass:rigidity}
+For any two parameter values $\theta, \theta'$ in the same chamber, there is a scalar $\lambda = \lambda(\theta,\theta')>0$ such that
+\[
+\Covit(\theta) = \lambda(\theta,\theta')\,\Covit(\theta').
+\]
+That is, the co-movement covariance is constant within a chamber up to a positive scale factor.
+\end{assumption}
+
+The scale factor is not idle. It allows the overall level of peg-deviation volatility to drift within a regime---which it plainly does---while the \emph{shape} of the co-movement structure is fixed. The paper therefore does not claim that co-movement is numerically frozen; it claims that its proportionality structure is.
+
+\begin{theorem}[Correlation rigidity]\label{thm:rigidity}
+Under Assumption~\ref{ass:rigidity}, the correlation matrix $\Sigmait(\theta)$ of \eqref{eq:normalised-corr} is constant on chambers: $\Sigmait(\theta) = \Sigmait(\theta')$ whenever $\theta$ and $\theta'$ lie in the same chamber.
+\end{theorem}
+\begin{proof}
+Fix a chamber and let $\theta,\theta'$ be in it, with $\Covit(\theta) = \lambda\Covit(\theta')$ and $\lambda>0$. Since $\Covit$ is positive semidefinite with $\Covit_{ii}>0$ on the domain of \eqref{eq:normalised-corr}, we have $D(\theta) = \lambda D(\theta')$ and hence $D(\theta)^{-1/2} = \lambda^{-1/2}D(\theta')^{-1/2}$. Therefore
+\[
+\Sigmait(\theta) = D(\theta)^{-1/2}\Covit(\theta)D(\theta)^{-1/2}
+= \bigl(\lambda^{-1/2}D(\theta')^{-1/2}\bigr)\bigl(\lambda\Covit(\theta')\bigr)\bigl(\lambda^{-1/2}D(\theta')^{-1/2}\bigr)
+= D(\theta')^{-1/2}\Covit(\theta')D(\theta')^{-1/2} = \Sigmait(\theta'),
+\]
+the two factors of $\lambda^{-1/2}$ cancelling the $\lambda$. Hence $\Sigmait$ is constant on the chamber.
+\end{proof}
+
+\begin{corollary}[Rigidity is inherited, not assumed, at the level of correlations]\label{cor:rigidity-corr}
+Theorem~\ref{thm:rigidity} is not a restatement of Assumption~\ref{ass:rigidity}. The assumption is made on $\Covit$ and involves a free scale; the conclusion is a statement about $\Sigmait$ and involves no scale. The normalising map removes the one degree of freedom the assumption leaves open.
+\end{corollary}
+
+Corollary~\ref{cor:rigidity-corr} is the \emph{correlation rigidity} of the title: within a regime the joint de-peg correlation matrix of a stablecoin basket does not move, and it is insensitive to the haircut, oracle bandwidth, or issuance rule that vary smoothly inside that regime. Rigidity is the lower step of the staircase; the upper step is the jump of \S\ref{sec:wall}.
+
+\begin{remark}[Economic reading]\label{rem:economic}
+Within any regime the cross-sectional correlation structure is determined by which failure channels are latent, not by the specific haircut, oracle bandwidth, or issuance rule in force. This is a moduli-theoretic reading of the empirical rigidity long noted in credit derivatives \citep{CovalJurekStafford2009}. Transitions between regimes require the accounting of \S\ref{sec:wall}.
+\end{remark}

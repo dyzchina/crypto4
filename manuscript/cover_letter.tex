@@ -1,0 +1,40 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\signature{Hongjun Gou\\Industrial and Commercial Bank of China\\Beijing 100140, China\\\texttt{gouhongjun\_bs@cq.icbc.com.cn}}
+\address{Hongjun Gou\\Industrial and Commercial Bank of China\\Beijing 100140, China}
+\begin{document}
+\begin{letter}{The Editors}
+\opening{Dear Editors,}
+
+I am pleased to submit for consideration the manuscript
+``\textbf{Correlation Rigidity and Contagion in Stablecoin Baskets: A Structural Diagnostic for Supervisors}.''
+
+US-dollar stablecoins now settle a systemic share of crypto transactions, and three institutional arrangements price the same object: basket margin at centralized venues, index perpetuals on decentralized venues, and proof-of-reserves at regulated issuers. All three need the joint peg-deviation correlation surface of a basket. Nobody observes that surface. On a representative day only three or four coins deviate at all, and the correlation matrices that clearinghouses, index providers and regulators publish are smoothed across the gaps. The paper's starting observation is that the gaps are not statistical noise. They are structural discontinuities, and smoothing across them systematically understates the joint tail loss the exercise is meant to price.
+
+The paper turns that observation into a diagnostic a supervisor can actually run. It represents the joint peg-preserving equilibrium as a parameter space stratified by the boundaries separating distinct failure channels---backing ratio, oracle, redemption, custody, bridge, regulatory, funding rate and interest rate---so that the stratification is inherited from the peg constraint rather than estimated from data. Within a stratum co-movement is locally constant. Across a boundary it jumps, and the jump is a rank-one object supported on a small block of coins, with a sign that the taxonomy fixes before any event window is observed.
+
+One point of technique deserves the referee's attention at the outset, because it is where the choice of matrix does real work. A rank-one additive jump supported on a block of two or more coins necessarily adds a positive amount to its own diagonal, and a correlation matrix cannot absorb that on either side of a wall, since its diagonal is fixed at one. The crossing law is therefore stated on the co-movement covariance, with correlations obtained as its normalised image; the normalising map assigns the unit diagonal rather than computing it, which removes the obstruction exactly. What survives into correlation space is the support and sign of the jump, not its rank --- and that, rather than a rank-one correlation jump, is what the empirical test targets.
+
+Three things follow, and they are what I would ask a referee to judge.
+
+\begin{enumerate}
+\item \textbf{An obstruction, not a fitting exercise.} The paper states three properties of co-movement as explicit assumptions---constancy within a regime, a rank-one crossing at a boundary, and support on the affected block---and then proves what follows from them: that rigidity of the covariance yields rigidity of the correlation matrix exactly, that the induced correlation jump has zero diagonal, and that every locally continuous estimator---Gaussian copula, single-factor portfolio invariant, low-rank shrinkage, dynamic conditional correlation---must forgo the jump. The assumptions are labelled as such rather than dressed as theorems; the consequence is a statement about the class of admissible estimators, not about one sample.
+
+\item \textbf{A test whose inference matches what the theory can deliver.} Because only support and sign survive normalisation, the empirical object is a gradient across pair layers: pairs of coins both inside the wall-affected block, pairs with one coin inside, and pairs with neither, with the block-versus-rest contrast differencing out the crisis-wide co-movement that raises every layer at once. On the USDC--SVB custody event this gives a clean three-step staircase, a contrast of 0.69, and a coin-level permutation $p = 0.011$; the pair that contains neither the primary victim nor any coin with direct custody exposure shows the largest jump in the panel, so the gradient is a block effect and not a victim effect, and the result survives a full $3\times3$ window grid. The test applies to the three events that carry a multi-coin block.
+
+\item \textbf{A diagnostic computable from public data.} Every input is a public source: the DeFiLlama peg-price archive, FRED series, Yahoo Finance and Etherscan records. Nothing proprietary, paywalled or issuer-internal. This matters operationally: the institutions that would use the diagnostic do not publish liquid equity prices and do not disclose bilateral exposures, which is precisely why equity-based systemic-risk measures have no traction here. The block signature itself is a statistic a supervisor can compute on an acute-window correlation submatrix, and the paper sets out the policy instruments it would key, all falsifiable on the public panel shipped with the paper.
+
+\end{enumerate}
+
+The reproducibility bundle contains all source, figure-generation and audit scripts, and raw extracts with SHA-256 checksums; the pipeline completes in under three minutes.
+
+The manuscript is the author's original work, has not been published previously, and is not under consideration elsewhere. It contains no material requiring copyright permission. The author has no conflicts of interest to disclose.
+
+Thank you for considering the manuscript.
+
+\closing{Sincerely,}
+\end{letter}
+\end{document}

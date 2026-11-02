@@ -1,0 +1,21 @@
+cid,date,n_coins,coins,max_dev_bp,coin_list,shared
+1,2021-01-02,3,frax+gemini-dollar+husd,264.9,"['frax', 'gemini-dollar', 'husd']",R=open
+4,2021-01-24,4,frax+gemini-dollar+terrausd+vai,468.0,"['frax', 'gemini-dollar', 'terrausd', 'vai']",R=open
+5,2021-02-17,2,gemini-dollar+vai,318.9,"['gemini-dollar', 'vai']",R=open
+7,2021-04-05,2,gemini-dollar+liquity-usd,678.3,"['gemini-dollar', 'liquity-usd']",R=open|reflexive=False
+10,2021-05-07,5,fei-usd+gemini-dollar+husd+liquity-usd+terrausd,584.9,"['fei-usd', 'gemini-dollar', 'husd', 'liquity-usd', 'terrausd']",R=open
+13,2021-06-18,2,husd+liquity-usd,377.7,"['husd', 'liquity-usd']",R=open|reflexive=False
+16,2021-07-30,2,liquity-usd+magic-internet-money,254.8,"['liquity-usd', 'magic-internet-money']",O=onchain|R=open
+18,2021-08-19,2,liquity-usd+magic-internet-money,199.7,"['liquity-usd', 'magic-internet-money']",O=onchain|R=open
+21,2021-10-31,2,husd+liquity-usd,280.5,"['husd', 'liquity-usd']",R=open|reflexive=False
+24,2022-01-23,2,liquity-usd+magic-internet-money,294.4,"['liquity-usd', 'magic-internet-money']",O=onchain|R=open
+28,2022-05-09,2,fei-usd+terrausd,8710.0,"['fei-usd', 'terrausd']",O=onchain|R=open|reflexive=True
+34,2022-09-22,2,euro-coin+stasis-eurs,423.9,"['euro-coin', 'stasis-eurs']",C=fiat_eur|O=multi|R=open|reflexive=False
+35,2022-10-06,3,euro-coin+husd+stasis-eurs,755.2,"['euro-coin', 'husd', 'stasis-eurs']",O=multi|R=open|reflexive=False
+36,2022-11-02,2,euro-coin+stasis-eurs,251.6,"['euro-coin', 'stasis-eurs']",C=fiat_eur|O=multi|R=open|reflexive=False
+41,2023-04-14,2,liquity-usd+usdd,190.0,"['liquity-usd', 'usdd']",O=onchain|R=open
+46,2023-07-17,2,gho+magic-internet-money,337.9,"['gho', 'magic-internet-money']",C=crypto|O=onchain
+53,2024-01-30,2,magic-internet-money+true-usd,224.6,"['magic-internet-money', 'true-usd']",R=open
+55,2024-03-08,2,crvusd+gho,148.3,"['crvusd', 'gho']",C=crypto|O=onchain|reflexive=False
+57,2024-03-24,2,magic-internet-money+true-usd,294.7,"['magic-internet-money', 'true-usd']",R=open
+71,2026-03-01,2,frax+magic-internet-money,297.4,"['frax', 'magic-internet-money']",O=onchain|R=open|reflexive=True

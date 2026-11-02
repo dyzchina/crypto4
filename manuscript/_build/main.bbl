@@ -1,0 +1,160 @@
+\begin{thebibliography}{}
+
+\bibitem[Aldasoro et~al., 2023]{BIS2023Stablecoin}
+Aldasoro, I., Mehrling, P., and Neilson, D.~H. (2023).
+\newblock On par: A money view of stablecoins.
+\newblock Technical Report 1146, BIS Working Papers.
+
+\bibitem[Ang and Chen, 2002]{AngChen2002}
+Ang, A. and Chen, J. (2002).
+\newblock Asymmetric correlations of equity portfolios.
+\newblock {\em Journal of Financial Economics}, 63(3):443--494.
+
+\bibitem[Behrend and Fantechi, 1997]{BehrendFantechi1997}
+Behrend, K. and Fantechi, B. (1997).
+\newblock The intrinsic normal cone.
+\newblock {\em Inventiones Mathematicae}, 128:45--88.
+
+\bibitem[Bridgeland, 2007]{Bridgeland2007}
+Bridgeland, T. (2007).
+\newblock Stability conditions on triangulated categories.
+\newblock {\em Annals of Mathematics}, 166(2):317--345.
+
+\bibitem[Catalini et~al., 2022]{CatalinKirk2022}
+Catalini, C., de~Gortari, A., and Shah, N. (2022).
+\newblock Some simple economics of stablecoins.
+\newblock {\em Annual Review of Financial Economics}, 14:117--135.
+
+\bibitem[Coval et~al., 2009]{CovalJurekStafford2009}
+Coval, J., Jurek, J., and Stafford, E. (2009).
+\newblock The economics of structured finance.
+\newblock {\em Journal of Economic Perspectives}, 23(1):3--25.
+
+\bibitem[d'Avernas et~al., 2024]{dAvernasEtal2024}
+d'Avernas, A., Maurin, V., and Vandeweyer, Q. (2024).
+\newblock Can stablecoins be stable?
+\newblock {\em Review of Financial Studies}.
+\newblock Forthcoming.
+
+\bibitem[Engle and Kelly, 2012]{EngleKelly2012}
+Engle, R. and Kelly, B. (2012).
+\newblock Dynamic equicorrelation.
+\newblock {\em Journal of Business and Economic Statistics}, 30(2):212--228.
+
+\bibitem[Fan et~al., 2013]{FanLiaoMincheva2013}
+Fan, J., Liao, Y., and Mincheva, M. (2013).
+\newblock Large covariance estimation by thresholding principal orthogonal
+  complements.
+\newblock {\em Journal of the Royal Statistical Society Series B},
+  75(4):603--680.
+
+\bibitem[{Financial Stability Board}, 2023]{FSB2023Stablecoin}
+{Financial Stability Board} (2023).
+\newblock High-level recommendations for the regulation, supervision and
+  oversight of global stablecoin arrangements.
+\newblock Technical report, FSB.
+
+\bibitem[Fukaya and Ono, 1999]{FukayaOno1999}
+Fukaya, K. and Ono, K. (1999).
+\newblock {A}rnold conjecture and {G}romov--{W}itten invariant.
+\newblock {\em Topology}, 38(5):933--1048.
+
+\bibitem[Gorton et~al., 2022]{GortonEtal2022}
+Gorton, G.~B., Ross, C.~P., and Ross, S.~Y. (2022).
+\newblock Making money.
+\newblock Technical Report 29710, National Bureau of Economic Research.
+
+\bibitem[Joyce, 2015]{Joyce2015}
+Joyce, D. (2015).
+\newblock A classical model for derived critical loci.
+\newblock {\em Journal of Differential Geometry}, 101(2):289--367.
+
+\bibitem[Klages-Mundt and Minca, 2020]{KlagesMundtMinca2020}
+Klages-Mundt, A. and Minca, A. (2020).
+\newblock While stability lasts: A stochastic model of noncustodial stablecoins
+  (preprint version).
+\newblock {\em arXiv preprint arXiv:2004.01304}.
+\newblock Preprint version of Klages-Mundt \& Minca (2023) Math.\ Finance.
+
+\bibitem[Klages-Mundt and Minca, 2022]{Klages2022}
+Klages-Mundt, A. and Minca, A. (2022).
+\newblock While stability lasts: A stochastic model of noncustodial
+  stablecoins.
+\newblock {\em Mathematical Finance}, 32(4):943--981.
+
+\bibitem[Kontsevich and Soibelman, 2008]{KontsevichSoibelman2008}
+Kontsevich, M. and Soibelman, Y. (2008).
+\newblock Stability structures, motivic {D}onaldson--{T}homas invariants and
+  cluster transformations.
+\newblock {\em arXiv:0811.2435}.
+
+\bibitem[Ledoit and Wolf, 2004]{LedoitWolf2004}
+Ledoit, O. and Wolf, M. (2004).
+\newblock A well-conditioned estimator for large-dimensional covariance
+  matrices.
+\newblock {\em Journal of Multivariate Analysis}, 88(2):365--411.
+
+\bibitem[Li, 2000]{Li2000}
+Li, D.~X. (2000).
+\newblock On default correlation: A copula function approach.
+\newblock {\em Journal of Fixed Income}, 9(4):43--54.
+
+\bibitem[Li and Tian, 1998]{LiTian1998}
+Li, J. and Tian, G. (1998).
+\newblock Virtual moduli cycles and {G}romov--{W}itten invariants of general
+  symplectic manifolds.
+\newblock In {\em Topics in Symplectic 4-Manifolds}. International Press.
+
+\bibitem[Liu et~al., 2023]{LiuLiSprenger2023}
+Liu, J., Makarov, I., and Schoar, A. (2023).
+\newblock Anatomy of a run: The {T}erra {L}una crash.
+\newblock Technical Report 31160, National Bureau of Economic Research.
+
+\bibitem[Lyons and Viswanath-Natraj, 2023]{LyonsViswanath2023}
+Lyons, R.~K. and Viswanath-Natraj, G. (2023).
+\newblock What keeps stablecoins stable?
+\newblock {\em Journal of International Money and Finance}, 131:102777.
+
+\bibitem[Ma et~al., 2023]{MaZengZhang2023}
+Ma, Y., Zeng, Y., and Zhang, A.~L. (2023).
+\newblock Stablecoin runs and the centralization of arbitrage.
+\newblock {\em SSRN Working Paper 4398546}.
+
+\bibitem[Pardon, 2016]{Pardon2016}
+Pardon, J. (2016).
+\newblock An algebraic approach to virtual fundamental cycles on moduli spaces
+  of pseudo-holomorphic curves.
+\newblock {\em Geometry \& Topology}, 20(2):779--1034.
+
+\bibitem[Pardon, 2019]{Pardon2019}
+Pardon, J. (2019).
+\newblock Contact homology and virtual fundamental cycles.
+\newblock {\em Journal of the American Mathematical Society}, 32(3):825--919.
+
+\bibitem[Pelletier, 2006]{Pelletier2006}
+Pelletier, D. (2006).
+\newblock Regime switching for dynamic correlations.
+\newblock {\em Journal of Econometrics}, 131(1--2):445--473.
+
+\bibitem[{President's Working Group on Financial Markets},
+  2021]{PWG2021Stablecoin}
+{President's Working Group on Financial Markets} (2021).
+\newblock Report on stablecoins.
+\newblock Technical report, U.S. Department of the Treasury.
+
+\bibitem[Routledge and Zetlin-Jones, 2022]{RoutledgeZetlin2022}
+Routledge, B. and Zetlin-Jones, A. (2022).
+\newblock Currency stability using blockchain technology.
+\newblock {\em Journal of Economic Dynamics and Control}, 142:104155.
+
+\bibitem[Uhlig, 2022]{Uhlig2022}
+Uhlig, H. (2022).
+\newblock A luna-tic stablecoin crash.
+\newblock {\em NBER Working Paper 30256}.
+
+\bibitem[Vasicek, 2002]{Vasicek2002}
+Vasicek, O.~A. (2002).
+\newblock The distribution of loan portfolio value.
+\newblock {\em Risk}, 15(12):160--162.
+
+\end{thebibliography}

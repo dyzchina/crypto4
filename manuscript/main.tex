@@ -1,0 +1,94 @@
+%% main.tex — v10.0 REFRAMED for a general finance readership (title option B)
+%% Alan hard rules (see FACT):
+%%   - line numbers NOT loaded (uncomment two lines below on R&R only)
+%%   - table captions ABOVE
+%%   - American English (analyze/color/harmonize)
+%%   - single author: Hongjun Gou @ ICBC Beijing 100140
+%%
+%% REFRAMING (v10.0, authorised by Alan 20261023 after three desk rejects):
+%%   The 20260828 title/abstract freeze is lifted for this variant only.
+%%   Title drops "The Geometry of ... as Virtual Fundamental Classes";
+%%   the abstract now leads with the stablecoin basket-risk problem and the
+%%   supervisory diagnostic, and the virtual-fundamental-class apparatus is
+%%   presented as the structural prior that delivers the result rather than
+%%   as the paper's identity. Body sections 2-6 are unchanged.
+%%   The frozen-framing version remains available as v9.0 (and v6.0-v8.0).
+\documentclass[12pt,article]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,mathtools}
+\usepackage{graphicx}
+\usepackage[svgnames,table]{xcolor}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage[round,authoryear]{natbib}
+\usepackage{float}
+\usepackage[section]{placeins}  %% \FloatBarrier and per-section barrier
+\usepackage{enumitem}
+%\usepackage{lineno}   %% uncomment on R&R
+%\linenumbers          %% uncomment on R&R
+
+\onehalfspacing
+\setcounter{secnumdepth}{3}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\coker}{coker}
+\newcommand{\Mconf}{\mathcal{M}}            %% ambient configuration moduli (carries the VFC)
+\newcommand{\Mpeg}{\mathcal{M}_{\mathrm{peg}}} %% peg-preserving locus inside \Mconf
+\newcommand{\Bpeg}{\mathcal{B}}
+\newcommand{\Wpeg}{\mathcal{W}}
+\newcommand{\Sigmait}{\Sigma}
+\newcommand{\Covit}{C}          %% co-movement covariance (carries the rank-one wall jump)
+\newcommand{\Deltait}{\Delta}   %% induced jump (covariance, or its normalised correlation image)
+\newcommand{\Lambdait}{\Lambda} %% retained for the appendix
+\newcommand{\Omit}{\Omega}
+\input{numbers.tex}
+\input{numbers_gradient.tex}
+
+\newif\ifanon
+\ifdefined\ANONBUILD\anontrue\fi
+
+\title{\Large Correlation Rigidity and Contagion in Stablecoin Baskets:\\[2pt]
+\Large A Structural Diagnostic for Supervisors}
+\ifanon
+  \author{}
+\else
+  \author{Hongjun Gou\thanks{Industrial and Commercial Bank of China, Beijing 100140, China. Email: \texttt{gouhongjun\_bs@cq.icbc.com.cn}.}}
+\fi
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+US-dollar stablecoins now form a systemic layer of crypto finance; basket margin, index perpetuals and proof-of-reserves price one unobservable object, the joint peg-deviation correlation surface of a basket. Typically only three or four deviate, and published correlations are smoothed across the gaps. We posit that the gaps are structural rather than noise: co-movement is rigid within a regime and jumps across its boundary, at eight stress boundaries, one per failure channel. Basket risk is a staircase, not a slope. Every locally continuous estimator must forgo that jump. A supervisor can run the diagnostic on public prices alone: on the USDC--SVB weekend the co-movement jump is concentrated on the coins that shared the failing custodian, and the largest jump of all falls on a pair excluding the coin that broke.
+
+\medskip
+\noindent\textbf{Keywords:} stablecoins; de-peg contagion; correlation rigidity; wall-crossing; basket pricing; regime switching.
+
+\medskip
+\noindent\textbf{JEL classification:} G12; G23; C58; C65.
+\end{abstract}
+
+\input{section1_intro.tex}
+\input{section2_moduli.tex}
+\input{section3_rigidity.tex}
+\input{section4_wall.tex}
+\input{section5_empirical.tex}
+\input{section6_conclusion.tex}
+
