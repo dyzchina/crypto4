@@ -30,7 +30,13 @@
 \newcommand{\Omit}{\Omega}
 
 \title{\Large Correlation rigidity and contagion in\\[1pt]\Large stablecoin baskets}
-\author{Hongjun Gou\thanks{Industrial and Commercial Bank of China, Beijing 100140, China. Email: \texttt{gouhongjun\_bs@cq.icbc.com.cn}.}}
+\newif\ifanon
+\ifdefined\ANONBUILD\anontrue\fi
+\ifanon
+  \author{}
+\else
+  \author{Hongjun Gou\thanks{Industrial and Commercial Bank of China, Beijing 100140, China. Email: \texttt{gouhongjun\_bs@cq.icbc.com.cn}.}}
+\fi
 \date{}
 
 \begin{document}
@@ -98,11 +104,13 @@ FDUSD     & $-0.0762$ (1) & $0.0838$ (44) & $0.1867$ (231) & $-0.2464$ & $0.7671
 \bibliographystyle{naturemag}
 \bibliography{../refs}
 
+\ifanon\else
 \section*{Acknowledgements}
 The author thanks colleagues at the Industrial and Commercial Bank of China for comments on an earlier draft, and acknowledges the maintainers of the public data archives used here.
 
 \section*{Author contributions}
 H.G. designed the study, performed the analysis and wrote the manuscript.
+\fi
 
 \section*{Competing interests}
 The author declares no competing interests.
