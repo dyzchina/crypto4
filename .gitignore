@@ -27,3 +27,6 @@ manuscript/ejor/*.bbl
 manuscript/ejor/*.blg
 manuscript/ejor/*.log
 manuscript/ejor/*.out
+
+# EJOR standalone test-build directory
+manuscript/ejor/_flat/
