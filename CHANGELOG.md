@@ -879,3 +879,18 @@ MEDIUM (3): (M1) single-coin-block event list corrected — FDUSD 2024 is a 2-co
 
 ### Publication target
 Econometrica first round. Backup waterfall: JF → RFS → RES → JFE.
+
+## Submission log
+
+| Date | Journal | Outcome | Latency | Notes |
+|---|---|---|---|---|
+| 20260901 | Mathematical Finance (Wiley) | desk reject | — | genre mismatch |
+| 20261010 | SIAM J. Financial Mathematics | desk reject | — | EIC H. M. Soner |
+| 20261023 | Journal of Financial Stability | desk reject | — | JFS-D-26-02421 |
+| 20261023 | Journal of Banking & Finance | desk reject | — | JBF-D-26-01853, four substantive concerns; one a real error |
+| 20261102 | Nature | desk reject | 1 day | "more suitable outlet in a specialist journal"; **not sent to referees** |
+
+Five desk rejections, two of them at general-science venues and three in finance. The
+paper's shape after v11.2 — three explicit assumptions, one powered empirical result,
+stated scope — matches a letters-format specialist journal rather than a full-length
+article at any of the venues tried so far.
