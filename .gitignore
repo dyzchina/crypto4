@@ -20,3 +20,10 @@ manuscript/nature/*.bbl
 manuscript/nature/*.blg
 manuscript/nature/*.log
 manuscript/nature/*.out
+
+# EJOR build by-products
+manuscript/ejor/*.aux
+manuscript/ejor/*.bbl
+manuscript/ejor/*.blg
+manuscript/ejor/*.log
+manuscript/ejor/*.out

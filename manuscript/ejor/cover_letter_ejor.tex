@@ -1,0 +1,26 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\signature{Hongjun Gou\\Industrial and Commercial Bank of China\\Beijing 100140, China\\\texttt{gouhongjun\_bs@cq.icbc.com.cn}}
+\address{Hongjun Gou\\Industrial and Commercial Bank of China\\Beijing 100140, China}
+\begin{document}
+\begin{letter}{The Editors\\European Journal of Operational Research}
+\opening{Dear Editors,}
+
+I am submitting for consideration the manuscript ``A permutation test for block structure in stablecoin basket dependence,'' and I would like to state plainly where I believe its operational research contribution lies, because the setting is a financial one and the contribution is not.
+
+The decision problem is a standard one in collateral management: a clearinghouse holding a basket of tokenised dollar claims must decide which instruments may be haircut together, and every downstream quantity it computes - portfolio value at risk, expected shortfall, a correlated-group margin multiplier - depends on a joint dependence matrix that cannot be estimated from the data the decision generates, because most members of the basket sit at par most of the time.
+
+The methodological contribution is in the inference, not the application. When a group of members is prescribed ex ante by a structural channel rather than estimated from the data, the natural test compares the dependence of pairs drawn from the group against pairs drawn across it. That test is usually carried out by permuting pairs, and that is wrong here: pairs sharing a member are not independent, so a permutation over pairs treats a dependent sample as an independent one and overstates precision. The paper shows that the unit of resampling must be the member, gives the resulting permutation test, and pairs it with a block-versus-rest contrast that removes a component common to every pair. The point is not specific to stablecoins; it applies to any setting in which pairwise statistics are computed over the members of a prescribed group - supplier networks with shared firms, systems with shared components, portfolios with shared issuers.
+
+The empirical section applies the procedure to the nine documented de-peg episodes of 2020--2025 using public price data only. On the largest custodial failure the predicted pattern appears with a block-versus-rest contrast of 0.69 and a member-level permutation p of 0.011, and it survives a full window grid; two further episodes with a prescribed block are reported alongside rather than pooled.
+
+I have tried to keep the paper honest about its own structure. Three properties of the dependence structure are stated as explicit assumptions rather than derived, so that a reader can separate what the procedure guarantees from what it claims; the identifying condition under which the contrast removes the common component is stated rather than assumed away; and the instrument is described as a monitor of a channel's incidence rather than a forecast of its onset.
+
+The manuscript is 24 pages including figures, tables, references and appendices, within the journal's 35-page limit, and is formatted to the journal's requirements. It is not under consideration elsewhere. Data and code sufficient to reproduce every number are archived at https://github.com/dyzchina/crypto4.
+
+\closing{Sincerely,}
+\end{letter}
+\end{document}

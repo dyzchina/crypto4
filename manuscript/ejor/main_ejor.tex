@@ -1,0 +1,71 @@
+%% main_ejor.tex — European Journal of Operational Research submission.
+%% EJOR requirements: 11 pt, single column, 1.5 spacing, NO line numbers,
+%% abstract <=250 words, 1-5 keywords (first from the EJOR list), Highlights
+%% (3-5 bullets, <=85 characters each) supplied as a separate file,
+%% APA-style author-year references, <=35 pages including figures/tables/appendices.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,mathtools}
+\usepackage{graphicx}
+\usepackage[svgnames,table]{xcolor}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage[round,authoryear]{natbib}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{titlesec}
+\graphicspath{{../}{./}}
+
+\onehalfspacing
+\setcounter{secnumdepth}{3}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\coker}{coker}
+\newcommand{\Mconf}{\mathcal{M}}
+\newcommand{\Mpeg}{\mathcal{M}_{\mathrm{peg}}}
+\newcommand{\Bpeg}{\mathcal{B}}
+\newcommand{\Wpeg}{\mathcal{W}}
+\newcommand{\Sigmait}{\Sigma}
+\newcommand{\Covit}{C}
+\newcommand{\Deltait}{\Delta}
+\newcommand{\Omit}{\Omega}
+\input{../numbers.tex}
+\input{../numbers_gradient.tex}
+
+\title{\Large\bfseries A permutation test for block structure in\\[2pt] stablecoin basket dependence}
+\author{Hongjun Gou\thanks{Industrial and Commercial Bank of China, Beijing 100140, China. Email: \texttt{gouhongjun\_bs@cq.icbc.com.cn}. Correspondence should be addressed to this author.}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Stablecoin baskets are used as collateral in margin and index products, and every such decision depends on the joint dependence structure of the basket. That structure is not observed: on a typical day most coins sit at par, so published dependence matrices are smoothed across the regions where the data are thin. We formulate the problem as one of detecting block structure in pairwise dependence when the block is prescribed ex ante by the failure channel that triggered an episode rather than estimated from the data. The procedure classifies coin pairs into three layers by how many of their members lie in the prescribed block, forms a block-versus-rest contrast to remove a component common to all pairs, and infers significance by permuting which coins form a block, since pairs that share a member are not independent and a permutation over pairs is anti-conservative. Three properties of the dependence structure are stated as explicit assumptions and their implications for the correlation matrix are proved. Applied to the nine documented de-peg episodes of 2020--2025 using public price data only, the procedure finds the predicted pattern on the largest custodial failure, with a block-versus-rest contrast of \GUSDCSVBDID\ and a coin-level permutation $p=\GUSDCSVBPCOIN$; the pattern survives a full window grid. Two further episodes with a prescribed multi-coin block are reported alongside rather than pooled. The unit-of-resampling argument applies to any setting in which pairwise statistics are computed over members of a prescribed group.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} Risk analysis; Finance; Contagion; Permutation inference; Regime switching
+
+\input{intro_ejor.tex}
+\input{../section2_moduli.tex}
+\input{../section3_rigidity.tex}
+\input{../section4_wall.tex}
+\input{../section5_empirical.tex}
+\input{tail_ejor.tex}
+
+\end{document}

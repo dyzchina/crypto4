@@ -1,0 +1,7 @@
+Highlights
+
+- Dependence in stablecoin baskets jumps at structural boundaries, not smoothly
+- Three-layer test detects a block prescribed ex ante by the failure channel
+- Coin-level permutation is needed; pair-level permutation is anti-conservative
+- Block-versus-rest contrast removes crisis-wide co-movement across coin pairs
+- Public price data alone suffice; no issuer disclosure or proprietary data
