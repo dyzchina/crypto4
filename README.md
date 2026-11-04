@@ -3,8 +3,8 @@
 **Title:** Correlation Rigidity and Contagion in Stablecoin Baskets: A Structural Diagnostic for Supervisors
 
 **Author:** Hongjun Gou (ICBC Beijing 100140)
-**Target journal:** Nature (see SUBMISSION_CHECKLIST)
-**Version:** v1.1.2-assumptions
+**Target journal:** European Journal of Operational Research (see SUBMISSION_CHECKLIST)
+**Version:** v1.1.2-ejor
 **Status:** v11.2 ASSUMPTIONS variant, built 20261102. After a full mathematical-correctness
 audit, the theoretical layer was **removed**: the virtual fundamental class, implicit atlas,
 Calabi–Yau hypothesis, Kontsevich–Soibelman derivation and risk-neutral pricing theorem are
