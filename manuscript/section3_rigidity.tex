@@ -55,12 +55,16 @@ Under Assumption~\ref{ass:rigidity}, the correlation matrix $\Sigmait(\theta)$ o
 \end{theorem}
 \begin{proof}
 Fix a chamber and let $\theta,\theta'$ be in it, with $\Covit(\theta) = \lambda\Covit(\theta')$ and $\lambda>0$. Since $\Covit$ is positive semidefinite with $\Covit_{ii}>0$ on the domain of \eqref{eq:normalised-corr}, we have $D(\theta) = \lambda D(\theta')$ and hence $D(\theta)^{-1/2} = \lambda^{-1/2}D(\theta')^{-1/2}$. Therefore
-\[
-\Sigmait(\theta) = D(\theta)^{-1/2}\Covit(\theta)D(\theta)^{-1/2}
-= \bigl(\lambda^{-1/2}D(\theta')^{-1/2}\bigr)\bigl(\lambda\Covit(\theta')\bigr)\bigl(\lambda^{-1/2}D(\theta')^{-1/2}\bigr)
-= D(\theta')^{-1/2}\Covit(\theta')D(\theta')^{-1/2} = \Sigmait(\theta'),
-\]
-the two factors of $\lambda^{-1/2}$ cancelling the $\lambda$. Hence $\Sigmait$ is constant on the chamber.
+\begin{equation*}
+\begin{split}
+\Sigmait(\theta)
+&= D(\theta)^{-1/2}\Covit(\theta)D(\theta)^{-1/2} \\
+&= \bigl(\lambda^{-1/2}D(\theta')^{-1/2}\bigr)\bigl(\lambda\Covit(\theta')\bigr)
+   \bigl(\lambda^{-1/2}D(\theta')^{-1/2}\bigr) \\
+&= D(\theta')^{-1/2}\Covit(\theta')D(\theta')^{-1/2} = \Sigmait(\theta'),
+\end{split}
+\end{equation*}
+the two factors of $\lambda^{-1/2}$ and the $\lambda$ in the middle cancelling. Hence $\Sigmait$ is constant on the chamber.
 \end{proof}
 
 \begin{corollary}[Rigidity is inherited, not assumed, at the level of correlations]\label{cor:rigidity-corr}
