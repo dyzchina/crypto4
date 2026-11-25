@@ -2,8 +2,8 @@
 
 | Section | Words |
 |---|---|
-| Abstract | 136 / 200 PASS |
-| Introduction | 1181 |
+| Abstract | 141 / 200 PASS |
+| Introduction | 1244 |
 | The Peg-Preserving Configuration Space | 712 |
 | Correlation Rigidity | 987 |
 | Wall-Crossing at Stress Boundaries | 1530 |
@@ -12,4 +12,4 @@
 | Data Construction | 480 |
 | Reproducibility Archive | 56 |
 | Out-of-Sample and Window Robustness | 511 |
-| **TOTAL BODY** | **8166** |
+| **TOTAL BODY** | **8229** |
