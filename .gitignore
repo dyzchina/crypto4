@@ -20,3 +20,8 @@ manuscript/nature/*.bbl
 manuscript/nature/*.blg
 manuscript/nature/*.log
 manuscript/nature/*.out
+
+# Snapp build scratch
+_snapp/
+_zipcheck/
+_snapp_reference.pdf
